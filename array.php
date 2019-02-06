@@ -1,6 +1,6 @@
 <?php
 // used for updates or one-off assignments
-$person['firstName'] = 'Andrew';
+$person['firstName'] = 'Steve';
 $person['lastName']  = 'Caya';
 $person['email']     = 'andrewscaya@yahoo.ca';
 var_dump($person);
