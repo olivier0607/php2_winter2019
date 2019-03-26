@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
 
     <style>
@@ -31,7 +31,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="css/signin.css" rel="stylesheet">
+    <link href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/css/signin.css" rel="stylesheet">
 </head>
 <body class="text-center">
 <form class="form-signin" method="post">

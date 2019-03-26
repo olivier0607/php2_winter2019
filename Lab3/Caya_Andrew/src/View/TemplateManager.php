@@ -1,7 +1,7 @@
 <?php
 /* Login App using Bootstrap Compact Login Form BS 3 */
 
-
+namespace Application\View;
 
 class TemplateManager
 {

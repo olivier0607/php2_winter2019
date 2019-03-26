@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/blog/">
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
 
     <style>
@@ -33,7 +33,7 @@
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/blog.css" rel="stylesheet">
+    <link href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/css/blog.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
