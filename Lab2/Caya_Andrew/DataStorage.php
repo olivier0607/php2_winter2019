@@ -12,7 +12,7 @@ class DataStorage
 
         if ($link === NULL) {
 
-            $link = mysqli_connect('localhost', 'root', '', 'login_app');
+            $link = mysqli_connect('localhost', 'root', '', 'andrew_session_app');
 
 
         } elseif ($getLink === FALSE) {
