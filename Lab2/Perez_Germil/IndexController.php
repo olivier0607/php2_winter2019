@@ -1,4 +1,4 @@
- <?php
+<?php
 
 class IndexController
 {
@@ -11,12 +11,8 @@ class IndexController
         $this->dataStore = $dataStore;
     }
 
-    public function indexActions()
+    public function indexAction()
     {
-       
-        // Start output buffering.
-        ob_start();
-
         // Set flags.
         $loginCheck = FALSE;
 
@@ -173,14 +169,6 @@ class IndexController
         $this->viewManager = new TemplateManager($this->data);
         $this->viewManager->loadTemplate();
         $this->viewManager->render();
-
-        ob_end_flush();
-
-        flush();
-
-        exit;
-    
-
     } 
 
 }

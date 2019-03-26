@@ -1,5 +1,7 @@
 <?php
 
+// Start output buffering.
+ob_start();
 
 require_once dirname(__FILE__)
     . DIRECTORY_SEPARATOR
@@ -7,8 +9,6 @@ require_once dirname(__FILE__)
     . DIRECTORY_SEPARATOR
     . 'SessionApp.php';
 
-
-    
 require 'TemplateManager.php';
 require 'IndexController.php';
 require 'DataStore.php';
@@ -17,5 +17,6 @@ $dataStore = new DataStore();
     
 $app = new IndexController($dataStore);
     
-$app->indexActions();
-    
+$app->indexAction();
+
+ob_end_flush();

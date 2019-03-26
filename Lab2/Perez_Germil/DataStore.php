@@ -3,14 +3,14 @@
 class DataStore 
 {
 
-    function getConnection($getLink = TRUE)
+    public function getConnection($getLink = TRUE)
     {
         
         static $link = NULL;
         
         if ($link === NULL) {
             
-            $link = mysqli_connect('localhost:3307', 'user', 'pass', 'germil_login_app');
+            $link = mysqli_connect('localhost', 'root', '', 'germil_session_app');
             
         } elseif ($getLink === FALSE) {
             
@@ -21,36 +21,36 @@ class DataStore
         return $link;
         
     }
-    
-    function getQuote()
+
+    public function getQuote()
     {
         
         return "'";
         
     }
-    
-    function queryResults($query)
+
+    public function queryResults($query)
     {
         
-        $link = getConnection();
+        $link = $this->getConnection();
         
         $result = mysqli_query($link, $query);
         
         $values = mysqli_fetch_assoc($result);
-        
-        getConnection(FALSE);
+
+        $this->getConnection(FALSE);
     
         return $values;
         
     }
     
     // SELECT `username`, `password` FROM `users` WHERE `username` LIKE $username; 
-    function checkLogin($username, $password)
+    public function checkLogin($username, $password)
     {
         
-        $query = 'SELECT `username`, `password` FROM `users` WHERE `username` LIKE ' . getQuote() . $username . getQuote();
+        $query = 'SELECT `username`, `password` FROM `users` WHERE `username` LIKE ' . $this->getQuote() . $username . $this->getQuote();
         
-        $values = queryResults($query);
+        $values = $this->queryResults($query);
         
         $passwordVerified = password_verify($password, $values['password']);
         
