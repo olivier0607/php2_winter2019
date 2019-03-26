@@ -24,7 +24,7 @@ class AppModel
         if ($link === NULL)
         {
 
-            $link = mysqli_connect('localhost:3307', 'loginuser', 'testpass', 'andrew_session_app');
+            $link = mysqli_connect('localhost:3307', 'loginuser', 'testpass', 'stevenson_session_app');
 
         }
         elseif ($getLink === FALSE)
