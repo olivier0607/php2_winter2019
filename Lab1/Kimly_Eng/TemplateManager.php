@@ -18,8 +18,6 @@ class TemplateManager
             . $this->data['firstName']
             . ' '
             . $this->data['lastName']
-            . ' '
-            . $this->data['age']
             . '<br>';
         $this->htmlOut .= 'You are ' . $this->data['age'] . ' years old!</p>';
 

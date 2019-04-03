@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #F2C975;
+    padding: 20px;
+}
+
+/*body{padding-top:20px;}*/
+
+#image {
+    height: 590px;
+    width: 100%;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 12px;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    /*position: relative;*/
+    padding: 10px;
+    font-family: Georgia, serif;
+}
+
+#sun {
+    right: 40px;
+    top: 45px;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fbac13;
+    visibility: hidden;
+}
+
+button {
+    height: 30px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: #005cbf;
+    font-family: Georgia, serif;
+}
+
+.form-inline {
+    margin-top: 20px;
+    visibility: hidden;
+}
+
+/* Sign in paragraph */
+#form {
+    font-family: Georgia, serif;
+}
+
+.form-control {
+    text-align: center;
+}
+
+footer {
+    font-family: Georgia, serif;
+}
+
+#sources {
+    visibility: hidden;
+    font-family: Georgia, serif;
+}
+
+
+
+

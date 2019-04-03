@@ -40,19 +40,19 @@ class DataStore
 // $andOr = AND | OR
     function getCustomers(array $where = array(), $andOr = 'AND')
     {
-        $query = 'SELECT `id`,`firstname`,`lastname`, `age`, FROM `users`';
+        $query = 'SELECT `id`,`firstname`,`lastname`, `age` FROM `users`';
         if ($where) {
             $query .= ' WHERE ';
             foreach ($where as $column => $value) {
-                $query .= $column . ' = ' . getQuote() . $value . getQuote() . ' ' . $andOr;
+                $query .= $column . ' = ' . $this->getQuote() . $value . $this->getQuote() . ' ' . $andOr;
             }
             $query = substr($query, 0, -(strlen($andOr)));
         }
-        $link = getConnection();
+        $link = $this->getConnection();
         $result = mysqli_query($link, $query);
-        return mysqli_fetch_all($result);
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-        $myArray = getCustomers(array('id' => '1'));
+//        $myArray = getCustomers(array('id' => '1'));
 
         closeConnection();
     }
@@ -62,6 +62,8 @@ class DataStore
      */
     public function getFirstName()
     {
+        $firstrow = $this->getCustomers(array('id' => '1'))[0];
+        $this->firstName = $firstrow['firstname'];
         return $this->firstName;
     }
 
@@ -80,6 +82,8 @@ class DataStore
      */
     public function getLastName()
     {
+        $firstrow = $this->getCustomers(array('id' => '1'))[0];
+        $this->lastName = $firstrow['lastname'];
         return $this->lastName;
     }
 
@@ -98,6 +102,8 @@ class DataStore
      */
     public function getAge()
     {
+        $firstrow = $this->getCustomers(array('id' => '1'))[0];
+        $this->age = $firstrow['age'];
         return $this->age;
     }
 
